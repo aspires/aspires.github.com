@@ -1,4 +1,4 @@
-[aspires.github.com](aspires.github.com)
+[aspires.github.com](http://aspires.github.io/)
 
 Go there if you're looking around
 
