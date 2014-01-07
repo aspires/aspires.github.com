@@ -4,7 +4,7 @@ title: Fastly Benchmark
 ---
 
 I got tired of looking at third party benchmarks of Fastly using closed source tools. They were black boxes, so I couldn't justify the
-numbers (good or bad) that they claimed. So, Simon and I knocked out the ultimate [mic-droppingly](http://0.media.collegehumor.cvcdn.com/56/95/7890f6112c0b7925960efaa915a58a56-dropmic3.gif) honest benchmarking we could.
+numbers (good or bad) that they claimed. So, [Simon](https://twitter.com/deflatermouse) and I knocked out the ultimate [mic-droppingly](http://0.media.collegehumor.cvcdn.com/56/95/7890f6112c0b7925960efaa915a58a56-dropmic3.gif) honest benchmarking we could.
 
 Take a look at the Gist [here](https://gist.github.com/aspires/8189975), but the script is (intentionally) so short that I can paste it in:
 
@@ -37,13 +37,13 @@ That's it. No fancy whiz-bangery. No grandisose flash and flare. Just tried and 
 The script uses two benchmarking tools:
 
 - [ApacheBench](http://en.wikipedia.org/wiki/ApacheBench)
-- [MTR](http://en.wikipedia.org/wiki/MTR_(software))
+- [MTR](http://en.wikipedia.org/wiki/MTR_(software)
 
 The user provides their existing domain, and the fastly generated service domain. __Note: the site and service need to be configured proper
 ly for caching for the test to be realistic.__
 
 From there, the script tests as many paths as the user desires with `ab`. The primary metric you want to look for here is the connection
-times and the percentile results. These readouts are going to be a good approximation of TTFB for that object.
+times and the percentile results. These readouts are going to be a good approximation of [TTFB](http://en.wikipedia.org/wiki/Time_To_First_Byte) for that object.
 
 ```
 #Other apache heath stats
@@ -90,9 +90,9 @@ HOST: ip-172-31-2-216                                 Loss%   Snt   Last   Avg  
 # The rule going forward
 
 We're not stoping here with benchmarking and evaluation options. We want more exaustive tools that go deeper into edge cases, and don't
-require as much external configuration. Right now, you need to have `ab` and `mtr` on your machine, and you realistically need a 
+require as much external configuration. Right now, you need to have `ab` and `mtr` on your machine, and you realistically need a
 few EC2 instances or other servers to test global performance. You need to have your Fastly service set up to cache properly,
-otherwise the tests will all be cache misses. Also, the `ab` test sucks on mac; it errors out every other benchmark. This is 
+otherwise the tests will all be cache misses. Also, the `ab` test sucks on mac; it errors out every other benchmark. This is
 too much work for such a simple script. It needs to be improved upon.
 
-But, the core principles of a simple, open, reproducable test is something that will be around in the future. 
+But, the core principles of a simple, open, reproducable test are things that will be around in the future.

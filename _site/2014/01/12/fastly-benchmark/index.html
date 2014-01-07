@@ -78,7 +78,7 @@
   <h1 class="post-title">Fastly Benchmark</h1>
   <span class="post-date">12 Jan 2014</span>
   <p>I got tired of looking at third party benchmarks of Fastly using closed source tools. They were black boxes, so I couldn&#39;t justify the
-numbers (good or bad) that they claimed. So, Simon and I knocked out the ultimate <a href="http://0.media.collegehumor.cvcdn.com/56/95/7890f6112c0b7925960efaa915a58a56-dropmic3.gif">mic-droppingly</a> honest benchmarking we could.</p>
+numbers (good or bad) that they claimed. So, <a href="https://twitter.com/deflatermouse">Simon</a> and I knocked out the ultimate <a href="http://0.media.collegehumor.cvcdn.com/56/95/7890f6112c0b7925960efaa915a58a56-dropmic3.gif">mic-droppingly</a> honest benchmarking we could.</p>
 
 <p>Take a look at the Gist <a href="https://gist.github.com/aspires/8189975">here</a>, but the script is (intentionally) so short that I can paste it in:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">#!/bin/bash
@@ -109,14 +109,14 @@ done
 
 <ul>
 <li><a href="http://en.wikipedia.org/wiki/ApacheBench">ApacheBench</a></li>
-<li><a href="http://en.wikipedia.org/wiki/MTR_(software">MTR</a>)</li>
+<li><a href="http://en.wikipedia.org/wiki/MTR_(software">MTR</a></li>
 </ul>
 
 <p>The user provides their existing domain, and the fastly generated service domain. <strong>Note: the site and service need to be configured proper
 ly for caching for the test to be realistic.</strong></p>
 
 <p>From there, the script tests as many paths as the user desires with <code>ab</code>. The primary metric you want to look for here is the connection
-times and the percentile results. These readouts are going to be a good approximation of TTFB for that object.</p>
+times and the percentile results. These readouts are going to be a good approximation of <a href="http://en.wikipedia.org/wiki/Time_To_First_Byte">TTFB</a> for that object.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">#Other apache heath stats
 
 Connection Times (ms)
@@ -156,12 +156,12 @@ improvements.</p>
 <h1>The rule going forward</h1>
 
 <p>We&#39;re not stoping here with benchmarking and evaluation options. We want more exaustive tools that go deeper into edge cases, and don&#39;t
-require as much external configuration. Right now, you need to have <code>ab</code> and <code>mtr</code> on your machine, and you realistically need a 
+require as much external configuration. Right now, you need to have <code>ab</code> and <code>mtr</code> on your machine, and you realistically need a
 few EC2 instances or other servers to test global performance. You need to have your Fastly service set up to cache properly,
-otherwise the tests will all be cache misses. Also, the <code>ab</code> test sucks on mac; it errors out every other benchmark. This is 
+otherwise the tests will all be cache misses. Also, the <code>ab</code> test sucks on mac; it errors out every other benchmark. This is
 too much work for such a simple script. It needs to be improved upon.</p>
 
-<p>But, the core principles of a simple, open, reproducable test is something that will be around in the future. </p>
+<p>But, the core principles of a simple, open, reproducable test are things that will be around in the future.</p>
 
 </div>
 
