@@ -1,7 +1,7 @@
----
+--
 layout: post
 title: What is trust
----
+--
 
 When you and I use a product, there's an inherent element of trust. We trust it will straight up work as advertised, we trust that the
 product won't put us at risk, and we trust that the product will improve my life in some way.

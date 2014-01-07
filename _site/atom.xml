@@ -4,13 +4,47 @@
  <title>ASpires</title>
  <link href="http://twitter.com/austinspires/atom.xml" rel="self"/>
  <link href="http://twitter.com/austinspires/"/>
- <updated>2014-01-07T00:08:00-08:00</updated>
+ <updated>2014-01-07T11:32:15-08:00</updated>
  <id>http://twitter.com/austinspires</id>
  <author>
    <name>Austin Spires</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>What is trust</title>
+   <link href="http://twitter.com/austinspires/2014/01/13/what-is-trust/"/>
+   <updated>2014-01-13T00:00:00-08:00</updated>
+   <id>http://twitter.com/austinspires/2014/01/13/what-is-trust</id>
+   <content type="html">&lt;p&gt;When you and I use a product, there&amp;#39;s an inherent element of trust. We trust it will straight up work as advertised, we trust that the
+product won&amp;#39;t put us at risk, and we trust that the product will improve my life in some way.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s a human connection to something that&amp;#39;s often very inhuman. At best, most people ignore or gloss over the inherent nature of trust in
+product/user relationship. At worst, they exploit it.&lt;/p&gt;
+
+&lt;p&gt;But, I can&amp;#39;t recall a single moment where someone outright aknowleged it.&lt;/p&gt;
+
+&lt;p&gt;Thinking about the products I use on a daily basis, every use or habit is rooted in an aspect of trust:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gmail shoud be up and working at all times, and they shouldn&amp;#39;t leak my email to the world.&lt;/li&gt;
+&lt;li&gt;Zendesk delivers my support responses immediately, and processes replies directly to me.&lt;/li&gt;
+&lt;li&gt;GitHub keeps my code, serves my site, and syncs up with branches as I push them.&lt;/li&gt;
+&lt;li&gt;My macbook saves things, has a long battery life, and doesn&amp;#39;t impede my workflow.&lt;/li&gt;
+&lt;li&gt;Dropbox syncs my stuff and serves as a simple backup.&lt;/li&gt;
+&lt;li&gt;The internet works. Like magic.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Low and behold, despite human beings operating these things, they work. The more I use these services, the more trust I place in them.
+They all will apologize for incidents that break this trust (downtime, security incidents, etc.), but no one addresses the core emotion.&lt;/p&gt;
+
+&lt;h2&gt;Why is trust a third rail?&lt;/h2&gt;
+
+&lt;p&gt;It doesn&amp;#39;t have to be, and it shouldn&amp;#39;t. When a person builds a personal relationship with something you make, don&amp;#39;t ignore it. It&amp;#39;s a
+chance to build a meaningful connection for a once.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Fastly Benchmark</title>
