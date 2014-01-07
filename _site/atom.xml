@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>ASpires</title>
+ <link href="http://twitter.com/austinspires/atom.xml" rel="self"/>
+ <link href="http://twitter.com/austinspires/"/>
+ <updated>2014-01-06T23:27:50-08:00</updated>
+ <id>http://twitter.com/austinspires</id>
+ <author>
+   <name>Austin Spires</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Things I wish I was better at</title>
+   <link href="http://twitter.com/austinspires/2014/01/11/things-i-wish-i-was-better-at/"/>
+   <updated>2014-01-11T00:00:00-08:00</updated>
+   <id>http://twitter.com/austinspires/2014/01/11/things-i-wish-i-was-better-at</id>
+   <content type="html">&lt;h2&gt;I am imperfect&lt;/h2&gt;
+
+&lt;p&gt;I have many flaws, character and otherwise. Some are more critical to fix than others.
+But, here&amp;#39;s a list of things I need to step up my game on:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I wish I were more patient.&lt;/li&gt;
+&lt;li&gt;I wish I were better at finishing projects.&lt;/li&gt;
+&lt;li&gt;I wish I took learning more seriously.&lt;/li&gt;
+&lt;li&gt;I wish I were more active in my community.&lt;/li&gt;
+&lt;li&gt;I wish I were better at forgiveness. Including forgiving myself.&lt;/li&gt;
+&lt;li&gt;I wish I were a better parter.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But, simply &amp;quot;wishing&amp;quot; does nothing. It&amp;#39;s bullshit.&lt;/p&gt;
+
+&lt;p&gt;I won&amp;#39;t be wishing anymore. I guess I&amp;#39;ll be working.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Let's try this again.</title>
+   <link href="http://twitter.com/austinspires/2014/01/11/new-setup/"/>
+   <updated>2014-01-11T00:00:00-08:00</updated>
+   <id>http://twitter.com/austinspires/2014/01/11/new-setup</id>
+   <content type="html">&lt;h2&gt;Moving to a new layout&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;#39;s hope to God this doesn&amp;#39;t result in &lt;a href=&quot;https://twitter.com/holman/status/418875911182614529&quot;&gt;Holman drinking more.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I have a few older, long posts I&amp;#39;ll port over. But, the goal here is short stuff. Let&amp;#39;s see if that makes a difference.&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>

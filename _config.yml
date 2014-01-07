@@ -1,0 +1,24 @@
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            ASpires
+tagline:          'A Jekyll theme'
+description:      'Commentary on support, sales, startups, and other random things.'
+url:              http://twitter.com/austinspires
+
+author:
+  name:           'Austin Spires'
+  url:            https://twitter.com/austinspires
+
+paginate:         5
+
+# Custom vars
+version:          2.0.0
+
+github:
+  repo:           https://github.com/aspires/aspires.github.com
