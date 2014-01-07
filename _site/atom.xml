@@ -4,7 +4,7 @@
  <title>ASpires</title>
  <link href="http://twitter.com/austinspires/atom.xml" rel="self"/>
  <link href="http://twitter.com/austinspires/"/>
- <updated>2014-01-06T23:27:50-08:00</updated>
+ <updated>2014-01-06T23:59:29-08:00</updated>
  <id>http://twitter.com/austinspires</id>
  <author>
    <name>Austin Spires</name>
@@ -47,6 +47,99 @@ But, here&amp;#39;s a list of things I need to step up my game on:&lt;/p&gt;
 &lt;p&gt;Let&amp;#39;s hope to God this doesn&amp;#39;t result in &lt;a href=&quot;https://twitter.com/holman/status/418875911182614529&quot;&gt;Holman drinking more.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I have a few older, long posts I&amp;#39;ll port over. But, the goal here is short stuff. Let&amp;#39;s see if that makes a difference.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Fastly Benchmark</title>
+   <link href="http://twitter.com/austinspires/2014/01/11/fastly-benchmark/"/>
+   <updated>2014-01-11T00:00:00-08:00</updated>
+   <id>http://twitter.com/austinspires/2014/01/11/fastly-benchmark</id>
+   <content type="html">&lt;p&gt;I got tired of looking at third party benchmarks of Fastly using closed source tools. They were black boxes, so I couldn&amp;#39;t justify the
+numbers (good or bad) that they claimed. So, Simon and I knocked out the ultimate &lt;a href=&quot;http://0.media.collegehumor.cvcdn.com/56/95/7890f6112c0b7925960efaa915a58a56-dropmic3.gif&quot;&gt;mic-droppingly&lt;/a&gt; honest benchmarking we could.&lt;/p&gt;
+
+&lt;p&gt;Take a look at the Gist &lt;a href=&quot;https://gist.github.com/aspires/8189975&quot;&gt;here&lt;/a&gt;, but the script is (intentionally) so short that I can paste it in:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;#!/bin/bash
+
+# Dependencies: ApacheBench, MTR
+
+REQUESTS=100
+CONCURRENCY=10
+FASTLY=&amp;#39;www.example.com.global.prod.fastly.net&amp;#39;
+CURRENT=&amp;#39;www.example.com&amp;#39;
+
+for url in &amp;#39;path/to/test&amp;#39; &amp;#39;path/to/test2&amp;#39; &amp;#39;path/to/test3&amp;#39;; do
+  for host in $CURRENT $FASTLY; do
+    ab -n $REQUESTS -c $CONCURRENCY &amp;quot;http://${host}/${url}&amp;quot; &amp;gt;&amp;gt; fastly.ab.log
+    #echo &amp;quot;http://${host}/${url}&amp;quot;
+  done
+done
+
+for host in $CURRENT $FASTLY; do
+  mtr -c $REQUESTS -w -r $host &amp;gt;&amp;gt; fastly.mtr.log
+done
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That&amp;#39;s it. No fancy whiz-bangery. No grandisose flash and flare. Just tried and true metrics tools that have been used in the industry for decades.&lt;/p&gt;
+
+&lt;h2&gt;So, what&amp;#39;s going on?&lt;/h2&gt;
+
+&lt;p&gt;The script uses two benchmarking tools:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/ApacheBench&quot;&gt;ApacheBench&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/MTR_(software&quot;&gt;MTR&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The user provides their existing domain, and the fastly generated service domain. &lt;strong&gt;Note: the site and service need to be configured proper
+ly for caching for the test to be realistic.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;From there, the script tests as many paths as the user desires with &lt;code&gt;ab&lt;/code&gt;. The primary metric you want to look for here is the connection
+times and the percentile results. These readouts are going to be a good approximation of TTFB for that object.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;#Other apache heath stats
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       86   92   3.2     91      98
+Processing:   531  239 155.0    860    1234
+Waiting:      234  640 145.8    649     962
+Total:        675  931 155.3    945    1325
+
+Percentage of the requests served within a certain time (ms)
+  50%    955
+  66%   1029
+  75%   1053
+  80%   1058
+  90%   1112
+  95%   1197
+  98%   1216
+  99%   1325
+ 100%   1325 (longest request)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The second command, for MTR, tests 100 cycles of network connection for each host. The readout should give you about overall network
+performance. The preformance you see here should correlate with the &lt;code&gt;ab&lt;/code&gt; results, but it&amp;#39;s a seperate approach to verifying latency
+improvements.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;HOST: ip-172-31-2-216                                 Loss%   Snt   Last   Avg  Best  Wrst StDev
+  1. ec2-79-125-1-98.eu-west-1.compute.amazonaws.com  0.0%   100    0.8   1.2   0.6  27.8   3.2
+  2. 178.236.0.220                                    0.0%   100    0.9   2.0   0.9  43.8   5.3
+  3. 178.236.0.182                                    0.0%   100    1.6   1.6   1.2  18.0   1.8
+  5. 178.236.3.52                                     0.0%   100   10.9  13.0  10.6  70.0   9.8
+  6. 82.112.115.161                                   0.0%   100   11.6  11.5  11.1  12.8   0.2
+  7. ae-13.r02.londen03.uk.bb.gin.ntt.net             0.0%   100   12.1  12.0  11.3  13.8   0.3
+  8. te0-7-0-9.ccr21.lon02.atlas.cogentco.com         0.0%   100   12.4  12.0  11.3  13.8   0.5
+  9. be2328.ccr21.lon01.atlas.cogentco.com            0.0%   100   11.5  11.8  11.5  13.9   0.4
+ 10. te2-1.ccr01.lon03.atlas.cogentco.com             0.0%   100   12.1  24.8  11.9 180.9  38.2
+ 11. ???                                             100.0   100    0.0   0.0   0.0   0.0   0.0
+ 12. 185.31.18.185                                    0.0%   100   14.9  12.5  11.0  15.4   1.8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;The rule going forward&lt;/h1&gt;
+
+&lt;p&gt;We&amp;#39;re not stoping here with benchmarking and evaluation options. We want more exaustive tools that go deeper into edge cases, and don&amp;#39;t
+require as much external configuration. Right now, you need to have &lt;code&gt;ab&lt;/code&gt; and &lt;code&gt;mtr&lt;/code&gt; on your machine, and you realistically need a 
+few EC2 instances or other servers to test global performance. You need to have your Fastly service set up to cache properly,
+otherwise the tests will all be cache misses. Also, the &lt;code&gt;ab&lt;/code&gt; test sucks on mac; it errors out every other benchmark. This is 
+too much work for such a simple script. It needs to be improved upon.&lt;/p&gt;
+
+&lt;p&gt;But, the core principles of a simple, open, reproducable test is something that will be around in the future. &lt;/p&gt;
 </content>
  </entry>
  
