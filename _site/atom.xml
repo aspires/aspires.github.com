@@ -4,13 +4,41 @@
  <title>ASpires</title>
  <link href="http://twitter.com/austinspires/atom.xml" rel="self"/>
  <link href="http://twitter.com/austinspires/"/>
- <updated>2014-01-16T23:16:46-08:00</updated>
+ <updated>2014-01-20T11:28:42-08:00</updated>
  <id>http://twitter.com/austinspires</id>
  <author>
    <name>Austin Spires</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Shoutout to Ops</title>
+   <link href="http://twitter.com/austinspires/2014/01/20/shoutout-to-ops/"/>
+   <updated>2014-01-20T00:00:00-08:00</updated>
+   <id>http://twitter.com/austinspires/2014/01/20/shoutout-to-ops</id>
+   <content type="html">&lt;p&gt;There are people in your company that you probably don&amp;#39;t know about. That is: you might be acquainted with them,
+but you may not be familiar with their role. They&amp;#39;re your operations team. They keep your site up and running.
+They make it so that you can deploy without downtime. They fight DDOS attacks and they make
+sure your machines are in tip top shape.&lt;/p&gt;
+
+&lt;p&gt;It’s a known truth: managing an infrastructure is hard. It&amp;#39;s a labor of love, and the larger a site gets,
+the more complex the operations challenges become. There are more pager escalations in the middle of the
+night, more edge cases to handle, and more risk to manage when deploying. Increasing complexity is a truism when
+making the internet, but it shouldn&amp;#39;t suck any more than it needs to.&lt;/p&gt;
+
+&lt;p&gt;When a site becomes successful it usually requires more technology and more processes to scale. But a site&amp;#39;s
+success shouldn&amp;#39;t mandate introducing anything that keeps your ops team from doing their job. Friction is
+lame, but paying for it is even worse. It’s something we obsess over when we work on Fastly.
+We&amp;#39;re building a product for ops, and we want to build the greatest operations tool possible. We don&amp;#39;t want
+our friends and colleagues to do more work because of us. We&amp;#39;ve seen how painful scaling can get, and we want
+to do everything we can to make the process easy. The decisions we’ve made about our product are to
+make engineering easier, not harder.&lt;/p&gt;
+
+&lt;p&gt;So, the next time you&amp;#39;re hanging out with your coworkers, take some time to raise a toast, pour one out, or verb
+your favorite noun to your ops team. They&amp;#39;re on call right now, so try not to break the build.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Is it better to be fast or good?</title>
@@ -21,16 +49,16 @@
 Focusing heavily on one of these two areas will clearly result in a high level of amazement. The amazement is the currency of support.
 It&amp;#39;s not the most important thing -- it&amp;#39;s the only thing.&lt;/p&gt;
 
-&lt;p&gt;But, it&amp;#39;s impractical to focus on one over the other. If someone has to wait several days for a response, a modern poet won&amp;#39;t be able to
-save the experience. On the other hand, an inept, but immediate response will infuriate people.&lt;/p&gt;
+&lt;p&gt;At the same time, it&amp;#39;s impractical to focus on one &lt;em&gt;at the expense of&lt;/em&gt; the other. If someone has to wait several days for a response,
+a modern poet won&amp;#39;t be able to save the experience. On the other hand, an inept, but immediate response will infuriate people.&lt;/p&gt;
 
-&lt;p&gt;So, how do you reconcile the two. The most obvious answer is to build a system where great support people -- people who can wield the
-english language like a painter wields a brush -- are do their best work as quickly as they comfortably can.&lt;/p&gt;
+&lt;p&gt;So, how do you reconcile the two. The most obvious answer is to build a system where great support people -- people who can wield
+language like a painter wields a brush -- are do their best work as quickly as they comfortably can.&lt;/p&gt;
 
 &lt;p&gt;Building an system like that is a holistic challenge. Few companies think about support beyond ticket counts and potential upselling, let
 alone providing a quality experience.&lt;/p&gt;
 
-&lt;p&gt;So, which is it? Is it better to be fast or good?&lt;/p&gt;
+&lt;p&gt;But, we got off track. Which is it? Is it better to be fast or good?&lt;/p&gt;
 
 &lt;p&gt;The secret is that it&amp;#39;s not about the answer. If you&amp;#39;re thinking about the question you&amp;#39;re already winning.&lt;/p&gt;
 </content>
