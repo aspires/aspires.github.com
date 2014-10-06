@@ -25,7 +25,7 @@ formats on your origin server, Fastly can serve the new encodings on the fly
 with some VCL. Note that for every .jpeg, .jpg, and .png, you need to have the corresponding .webp.
 For instance, if you have a `/foo/bar.jpeg` on your server, you also need to have a `/foo/bar.webp`.
 
-```vcl
+```perl
 sub vcl_recv {
   # Normalize Accept, we're only interested in webp right now.
   # And only normalize for URLs we care about.
