@@ -1,5 +1,5 @@
 ---
-layout: blog_post
+layout: post
 title: 'Test New Encodings With Fastly'
 ---
 
