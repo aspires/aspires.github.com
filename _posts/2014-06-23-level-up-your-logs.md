@@ -1,5 +1,5 @@
 ---
-layout: blog_post
+layout: post
 title: 'Level Up Your Log: Pro Tips for Fastly Streaming Logs'
 ---
 
