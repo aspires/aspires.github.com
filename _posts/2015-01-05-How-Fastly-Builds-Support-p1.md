@@ -1,5 +1,5 @@
 ---
-layout: blog_post
+layout: post
 title: 'How Fastly Builds Support, Part 1'
 ---
 
