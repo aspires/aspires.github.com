@@ -25,7 +25,7 @@ for a new CDN vendor, they may have a difficult problem to solve such as scaling
 a service API, or they may just be growing exponentially. In any case,
 there's an obvious operational pain point that Fastly can solve.
 
-We intentionally provide a frictionless sign-up process so customers can begin
+We intentionally provide a frictionless signup process so customers can begin
 configuring and testing without needing to talk to a human first. We're ready
 to assist, and we make sure that new customers feel free to reach out, but we
 don't force ourselves into the picture unnecessarily.
